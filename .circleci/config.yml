@@ -31,7 +31,7 @@ jobs:
           command: |
             curl -X POST -H 'Content-type: application/json' --data '{
               "text": "✅ *Pipeline ejecutado con éxito* 🚀\n_Proyecto_: pruebatecnica VirtualSoft siii"
-            }' "https://hooks.slack.com/services/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"
+            }' "https://hooks.slack.com/services/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"
 
 workflows:
   version: 2
@@ -44,3 +44,4 @@ workflows:
       - notify_slack:
           requires:
             - test
+            context: slack-secrets
