@@ -1,0 +1,16 @@
+name: Revisar syntax del README 
+on:
+  pull_request:
+    branches:
+      - develop
+jobs:
+  check_syntax:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Revisar repositorio el archivo .md
+    - uses: tomwhross/write-good-action@v1.6
+      with:
+        directory: .
+          
+
+

@@ -1,0 +1,13 @@
+name: Imprmir DeploySuccesful
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Revisar repositorio main
+      uses: actions/checkout@v2
+    - name: Simular deployment
+      run: echo "Deploy Successful"
