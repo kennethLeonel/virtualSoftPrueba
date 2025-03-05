@@ -1,2 +1,2 @@
 # virtualSoftPrueba
-Se cambio develop prueba inicial cambio corto
+Se cambio develop prueba inicial cambio
