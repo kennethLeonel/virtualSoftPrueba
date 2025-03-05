@@ -9,7 +9,7 @@ jobs:
           name: Execute Bash Script
           command: |
             #!/bin/bash
-            ./your-script.sh
+            ./script.sh
 workflows:
   version: 2
   execute:
