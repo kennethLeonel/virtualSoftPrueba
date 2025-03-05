@@ -30,7 +30,7 @@ jobs:
           name: Enviar notificación a Slack
           command: |
             curl -X POST -H 'Content-type: application/json' --data '{
-              "text": "✅ *Pipeline ejecutado con éxito* 🚀\n_Proyecto_: pruebatecnica VirtualSoft"
+              "text": "✅ *Pipeline ejecutado con éxito* 🚀\n_Proyecto_: pruebatecnica VirtualSoft siii"
             }' "https://hooks.slack.com/services/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"
 
 workflows:
