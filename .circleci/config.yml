@@ -46,7 +46,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Proyecto*: pruebatecnica VirtualSoft siii"
+                      "text": "*Proyecto*: pruebatecnica VirtualSoft funciono el despliegue"
                     }
                   ]
                 }
