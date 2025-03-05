@@ -53,7 +53,7 @@ jobs:
               ]
             }
           event: always
-          webhook: << pipeline.parameters.slack_webhook >>  # Esto tomará la variable del contexto de CircleCI
+          webhook: $SLACK_WEBHOOK_URL  # Esto tomará la variable del contexto de CircleCI
 
 workflows:
   version: 2
