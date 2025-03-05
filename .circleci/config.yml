@@ -31,7 +31,7 @@ jobs:
           command: |
             curl -X POST -H 'Content-type: application/json' --data '{
               "text": "✅ *Pipeline ejecutado con éxito* 🚀\n_Proyecto_: pruebatecnica"
-            }' "https://hooks.slack.com/services/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"
+            }' "https://hooks.slack.com/services/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"
 
 workflows:
   version: 2
