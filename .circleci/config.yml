@@ -53,7 +53,6 @@ jobs:
               ]
             }
           event: always
-          webhook: $SLACK_WEBHOOK_URL  # Esto tomará la variable del contexto de CircleCI
 
 workflows:
   version: 2
@@ -66,4 +65,4 @@ workflows:
       - notify_slack:
           requires:
             - test
-          context: slack-secrets  # Usar el contexto que contiene los secretos
+          context: slack-secrets  # Usar el contexto que contiene la variable 'SLACK_WEBHOOK_URL'
