@@ -1,0 +1,17 @@
+name: Revisar syntax del README 
+on:
+  pull_request:
+    branches:
+      - develop
+jobs:
+  check_syntax:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Install markdownlint
+      run: |
+        npm install -g markdownlint-cli
+    - name: Run markdownlint on README.md
+      run: markdownlint README.md
+
