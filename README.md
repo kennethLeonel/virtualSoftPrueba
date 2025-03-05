@@ -1,2 +1,2 @@
 # virtualSoftPrueba
-Se cambio develop prueba inicial cambio 2
+Se cambio readme para la rama Develop
