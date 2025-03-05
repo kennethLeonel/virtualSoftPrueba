@@ -7,11 +7,12 @@ jobs:
   check_syntax:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Instalamos libreria para revsiar nuestro ReadMe
-      run: |
-        npm install -g markdownlint-cli
-    - name: Corremos markdownlint en nuetro README
-      run: markdownlint README.md
+    - name: Revisar repositorio el archivo .md
+    - uses: actions/checkout@v4
+    - uses: DavidAnson/markdownlint-cli2-action@v19
+      with:
+        globs: |
+          *.md
+          !test/*.md
+
 
