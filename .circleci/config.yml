@@ -1,4 +1,9 @@
 version: 2.1
+
+# Incluir el orb de Slack
+orbs:
+  slack: circleci/slack@4.9.3
+
 jobs:
   build:
     docker:
@@ -22,16 +27,33 @@ jobs:
             apt-get update && apt-get install -y bats
             bats ./tests/test.bats
 
+  # Job de notificación con Slack usando el orb
   notify_slack:
     docker:
-      - image: curlimages/curl:latest
+      - image: cimg/base:current
     steps:
-      - run:
-          name: Enviar notificación a Slack
-          command: |
-            curl -X POST -H 'Content-type: application/json' --data '{
-              "text": "✅ *Pipeline ejecutado con éxito* 🚀\n_Proyecto_: pruebatecnica VirtualSoft siii"
-            }' "https://hooks.slack.com/services/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"
+      - slack/notify:
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*Pipeline ejecutado con éxito* 🚀",
+                      "emoji": true
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Proyecto*: pruebatecnica VirtualSoft siii"
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+          webhook: << pipeline.parameters.slack_webhook >>  # Esto tomará la variable del contexto de CircleCI
 
 workflows:
   version: 2
@@ -44,4 +66,4 @@ workflows:
       - notify_slack:
           requires:
             - test
-            context: slack-secrets
+          context: slack-secrets  # Usar el contexto que contiene los secretos
