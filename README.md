@@ -1,2 +1,2 @@
 # virtualSoftPrueba
-Se cambio readme para la rama Develop
+Se cambio readme para la rama Main
