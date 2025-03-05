@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Revisar repositorio el archivo .md
-    - uses: tomwhross/write-good-action@v1.6
+      uses: tomwhross/write-good-action@v1.6
       with:
         directory: .
 
