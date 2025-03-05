@@ -9,9 +9,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Install markdownlint
+    - name: Instalamos libreria para revsiar nuestro ReadMe
       run: |
         npm install -g markdownlint-cli
-    - name: Run markdownlint on README.md
+    - name: Corremos markdownlint en nuetro README
       run: markdownlint README.md
 
